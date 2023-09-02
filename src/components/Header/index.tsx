@@ -20,7 +20,7 @@ const Header = (props: Props) => {
 
   const currentKeyword = watch('keyword');
   const keywordFilter = keywords.filter(
-    (item) => item.includes(currentKeyword) && item !== currentKeyword,
+    (keyword) => keyword.includes(currentKeyword) && keyword !== currentKeyword,
   );
 
   const onSubmit = (data: any) => console.log(data);
@@ -34,7 +34,7 @@ const Header = (props: Props) => {
         </button>
         {!!keywordFilter.length && (
           <ul className={styles.keywordsDropDown}>
-            {keywordFilter.map((keyword) => (
+            {keywordFilter.map((keyword, index) => (
               <li key={keyword} onClick={() => setValue('keyword', keyword)}>
                 {keyword}
               </li>
