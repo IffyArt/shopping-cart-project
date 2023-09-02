@@ -1,4 +1,6 @@
+import { CartContext } from '@/contexts/CartContext';
 import Link from 'next/link';
+import { useContext } from 'react';
 import { BiSolidUser } from 'react-icons/bi';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { SiPrestashop } from 'react-icons/si';
@@ -7,6 +9,8 @@ import styles from './styles.module.css';
 type Props = {};
 
 const Navbar = (props: Props) => {
+  const { cart } = useContext(CartContext);
+
   return (
     <nav className={styles.nav}>
       <Link className={styles.logo} href='/'>
@@ -26,9 +30,15 @@ const Navbar = (props: Props) => {
           </li>
         </ul>
       </article>
+
       <ul className={styles.toolBar}>
         <li>
           <HiOutlineShoppingBag />
+          {!!cart.length && (
+            <span className={styles.badge}>
+              {cart.length > 10 ? '9+' : cart.length}
+            </span>
+          )}
         </li>
         <li>
           <BiSolidUser />

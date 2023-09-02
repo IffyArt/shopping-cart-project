@@ -4,7 +4,7 @@ import { useContext } from 'react';
 
 export default function Home() {
   const { cart, setCart } = useContext(CartContext);
-  console.log(cart);
+
   return (
     <>
       <Head>
@@ -13,7 +13,26 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      ssss
+      <button
+        onClick={() =>
+          setCart([
+            ...cart,
+            {
+              id: 1,
+              title: 'test',
+              quantity: 1,
+              price: 100,
+              description: 'test',
+              category: {
+                id: 5,
+                name: 'Others',
+                image: 'https://placeimg.com/640/480/any?r=0.591926261873231',
+              },
+              image: 'https://placeimg.com/640/480/any?r=0.9178516507833767',
+            },
+          ])
+        }
+      ></button>
     </>
   );
 }
