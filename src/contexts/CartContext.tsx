@@ -1,12 +1,14 @@
 import { CartItem } from '@/models/cart-item';
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 
 type CartContextType = {
   cart: CartItem[];
+  setCart: (cart: CartItem[]) => void;
 };
 
 const cartContextValue: CartContextType = {
   cart: [],
+  setCart: () => {},
 };
 
 export const CartContext = createContext<CartContextType>(cartContextValue);
@@ -16,8 +18,10 @@ type Props = {
 };
 
 const CartContextProvider = ({ children }: Props) => {
+  const [cart, setCart] = useState<CartItem[]>([]);
+
   return (
-    <CartContext.Provider value={{ ...cartContextValue }}>
+    <CartContext.Provider value={{ cart, setCart }}>
       {children}
     </CartContext.Provider>
   );
