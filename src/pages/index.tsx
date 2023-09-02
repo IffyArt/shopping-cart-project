@@ -1,7 +1,12 @@
 import Navbar from '@/components/Navbar';
+import { CartContext } from '@/contexts/CartContext';
 import Head from 'next/head';
+import { useContext } from 'react';
 
 export default function Home() {
+  const { cart } = useContext(CartContext);
+  console.log(cart);
+
   return (
     <>
       <Head>
