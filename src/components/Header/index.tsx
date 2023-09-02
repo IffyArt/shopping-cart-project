@@ -18,7 +18,7 @@ const keywords = [
 const Header = (props: Props) => {
   const { register, handleSubmit, watch, setValue } = useForm();
 
-  const currentKeyword = watch('keyword');
+  const currentKeyword = watch('keyword') !== '' ? watch('keyword') : null;
   const keywordFilter = keywords.filter(
     (keyword) => keyword.includes(currentKeyword) && keyword !== currentKeyword,
   );
