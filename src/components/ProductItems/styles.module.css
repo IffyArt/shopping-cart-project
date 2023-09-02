@@ -1,9 +1,25 @@
 .productItems {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
 .productItems img {
   width: 128px;
+}
+
+.productItems > li {
+  display: inline-flex;
+  overflow: hidden;
+  border: solid 1px #ccc;
+  border-radius: 8px;
+}
+
+.productItems > li > aside {
+  display: inline-flex;
+}
+
+.productInfo {
+  padding: 1rem;
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
   apiGetProductItem,
   apiGetProducts,
@@ -30,7 +31,13 @@ const ProductItems = (props: Props) => {
       <ul className={styles.productItems}>
         {products.map((product) => (
           <li key={product.id} onClick={() => getDetailInfo(product.id)}>
-            {product.title}
+            <aside>
+              <img src='https://fakeimg.pl/100x100/' alt={product.title} />
+            </aside>
+            <article className={styles.productInfo}>
+              <h2>{product.title}</h2>
+              <p>價錢：{product.price}</p>
+            </article>
           </li>
         ))}
       </ul>
