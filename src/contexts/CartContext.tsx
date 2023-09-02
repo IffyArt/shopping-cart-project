@@ -1,10 +1,15 @@
+import { CartItem } from '@/models/cart-item';
 import { createContext } from 'react';
 
-const cartContextValue = {
+type CartContextType = {
+  cart: CartItem[];
+};
+
+const cartContextValue: CartContextType = {
   cart: [],
 };
 
-export const CartContext = createContext(cartContextValue);
+export const CartContext = createContext<CartContextType>(cartContextValue);
 
 type Props = {
   children: React.ReactNode;
