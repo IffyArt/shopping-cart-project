@@ -1,7 +1,46 @@
+import { useForm } from 'react-hook-form';
+import { BiSearchAlt } from 'react-icons/bi';
+import styles from './styles.module.css';
+
 type Props = {};
 
+const keywords = [
+  '藍芽耳機',
+  '藍芽喇叭',
+  '藍芽鍵盤',
+  '藍芽滑鼠',
+  '藍芽鍵盤滑鼠組',
+  'Apple AirPods',
+  'Apple AirPods Pro',
+  'Apple AirPods Max',
+];
+
 const Header = (props: Props) => {
-  return <div>Header</div>;
+  const { register, handleSubmit, watch, setValue } = useForm();
+
+  const currentKeyword = watch('keyword');
+
+  const onSubmit = (data: any) => console.log(data);
+
+  return (
+    <header className={styles.header}>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <input {...register('keyword')} />
+        <button type='submit'>
+          <BiSearchAlt />
+        </button>
+        <ul className={styles.keywordsDropDown}>
+          {keywords
+            .filter((item) => item.includes(currentKeyword))
+            .map((keyword) => (
+              <li key={keyword} onClick={() => setValue('keyword', keyword)}>
+                {keyword}
+              </li>
+            ))}
+        </ul>
+      </form>
+    </header>
+  );
 };
 
 export default Header;
