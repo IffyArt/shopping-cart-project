@@ -20,7 +20,7 @@ const Navbar = (props: Props) => {
       <article className={styles.navContainer}>
         <ul className={styles.navList}>
           <li>
-            <Link href='/'>關於我們</Link>
+            <Link href='/about'>關於我們</Link>
           </li>
           <li>
             <Link href='/'>商品項目</Link>

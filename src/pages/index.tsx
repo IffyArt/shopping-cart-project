@@ -1,3 +1,4 @@
+import ProductItems from '@/components/ProductItems';
 import { CartContext } from '@/contexts/CartContext';
 import Head from 'next/head';
 import { useContext } from 'react';
@@ -13,7 +14,8 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <button
+      <ProductItems />
+      {/* <button
         onClick={() =>
           setCart([
             ...cart,
@@ -32,7 +34,9 @@ export default function Home() {
             },
           ])
         }
-      ></button>
+      >
+        按鈕
+      </button> */}
     </>
   );
 }
