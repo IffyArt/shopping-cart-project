@@ -1,0 +1,52 @@
+.nav {
+  display: flex;
+  height: 48px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  height: 48px;
+  border-right: 1px solid #e3e3e3;
+  color: teal;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.logo b {
+  margin-left: 8px;
+}
+
+.navContainer {
+  display: inline-flex;
+  align-items: center;
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.navList {
+  display: flex;
+}
+
+.navList li {
+  margin: 0 0.5rem;
+}
+
+.navList li a {
+  color: #5a5a5a;
+  text-decoration: none;
+}
+
+.toolBar {
+  display: inline-flex;
+}
+
+.toolBar li {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  border-left: 1px solid #e3e3e3;
+}

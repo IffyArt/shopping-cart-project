@@ -1,7 +1,41 @@
+import Link from 'next/link';
+import { BiSolidUser } from 'react-icons/bi';
+import { HiOutlineShoppingBag } from 'react-icons/hi';
+import { SiPrestashop } from 'react-icons/si';
+import styles from './styles.module.css';
+
 type Props = {};
 
 const Navbar = (props: Props) => {
-  return <div>Navbar</div>;
+  return (
+    <nav className={styles.nav}>
+      <Link className={styles.logo} href='/'>
+        <SiPrestashop />
+        <b>SHOPPING</b>
+      </Link>
+      <article className={styles.navContainer}>
+        <ul className={styles.navList}>
+          <li>
+            <Link href='/'>關於我們</Link>
+          </li>
+          <li>
+            <Link href='/'>商品項目</Link>
+          </li>
+          <li>
+            <Link href='/'>使用客群</Link>
+          </li>
+        </ul>
+      </article>
+      <ul className={styles.toolBar}>
+        <li>
+          <HiOutlineShoppingBag />
+        </li>
+        <li>
+          <BiSolidUser />
+        </li>
+      </ul>
+    </nav>
+  );
 };
 
 export default Navbar;
