@@ -5,12 +5,14 @@ import {
 } from '@/components/servers/products';
 import { Product } from '@/models/product';
 import { useEffect, useState } from 'react';
+import ProductModal from './ProductModal';
 import styles from './styles.module.css';
 
 type Props = {};
 
 const ProductItems = (props: Props) => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [product, setProduct] = useState<Product | null>(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -23,11 +25,12 @@ const ProductItems = (props: Props) => {
 
   const getDetailInfo = async (id: number) => {
     const data = await apiGetProductItem(id);
-    console.log(data);
+    setProduct(data);
   };
 
   return (
     <article>
+      {product && <ProductModal product={product} setProduct={setProduct} />}
       <ul className={styles.productItems}>
         {products.map((product) => (
           <li key={product.id} onClick={() => getDetailInfo(product.id)}>

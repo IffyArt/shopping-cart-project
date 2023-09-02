@@ -1,0 +1,40 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  width: 70%;
+  background-color: white;
+}
+
+.modalContainer header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.modalContainer article {
+  display: flex;
+  padding: 1rem;
+}
+
+.modalContainer img {
+  width: 300px;
+}
+
+.aside {
+  margin-left: 1.5rem;
+}

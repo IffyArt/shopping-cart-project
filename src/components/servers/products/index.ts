@@ -7,4 +7,4 @@ export const apiGetProducts = async () =>
 
 // 取得產品項目
 export const apiGetProductItem = async (id: number) =>
-  instance.get<Product[]>(`/products/${id}`).then((response) => response.data);
+  instance.get<Product>(`/products/${id}`).then((response) => response.data);
