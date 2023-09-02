@@ -1,4 +1,3 @@
-import Navbar from '@/components/Navbar';
 import { CartContext } from '@/contexts/CartContext';
 import Head from 'next/head';
 import { useContext } from 'react';
@@ -14,34 +13,7 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <Navbar />
-      <ul>
-        <li>1</li>
-        <li>2</li>
-      </ul>
-      <ol
-        className='sss'
-        onClick={() =>
-          setCart([
-            {
-              id: 2,
-              title: 'test',
-              price: 100,
-              quantity: 1,
-              description: 'test',
-              category: {
-                id: 5,
-                name: 'Others',
-                image: 'https://placeimg.com/640/480/any?r=0.591926261873231',
-              },
-              image: 'https://placeimg.com/640/480/any?r=0.591926261873231',
-            },
-          ])
-        }
-      >
-        <li>1</li>
-        <li>2</li>
-      </ol>
+      ssss
     </>
   );
 }
