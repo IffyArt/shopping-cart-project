@@ -11,7 +11,9 @@ const cartContextValue: CartContextType = {
   setCart: () => {},
 };
 
-export const CartContext = createContext<CartContextType>(cartContextValue);
+export const CartContext = createContext<CartContextType>(
+  {} as CartContextType,
+);
 
 type Props = {
   children: React.ReactNode;
