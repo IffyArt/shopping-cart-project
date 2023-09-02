@@ -3,6 +3,8 @@ import { ProductCategory } from './product';
 export type CartItem = {
   // id
   id: number;
+  // 標題
+  title: string;
   // 數量
   quantity: number;
   // 價錢
