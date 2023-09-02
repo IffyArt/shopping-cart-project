@@ -19,6 +19,9 @@ const Header = (props: Props) => {
   const { register, handleSubmit, watch, setValue } = useForm();
 
   const currentKeyword = watch('keyword');
+  const keywordFilter = keywords.filter(
+    (item) => item.includes(currentKeyword) && item !== currentKeyword,
+  );
 
   const onSubmit = (data: any) => console.log(data);
 
@@ -29,15 +32,15 @@ const Header = (props: Props) => {
         <button type='submit'>
           <BiSearchAlt />
         </button>
-        <ul className={styles.keywordsDropDown}>
-          {keywords
-            .filter((item) => item.includes(currentKeyword))
-            .map((keyword) => (
+        {!!keywordFilter.length && (
+          <ul className={styles.keywordsDropDown}>
+            {keywordFilter.map((keyword) => (
               <li key={keyword} onClick={() => setValue('keyword', keyword)}>
                 {keyword}
               </li>
             ))}
-        </ul>
+          </ul>
+        )}
       </form>
     </header>
   );
