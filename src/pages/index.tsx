@@ -15,28 +15,6 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <ProductItems />
-      {/* <button
-        onClick={() =>
-          setCart([
-            ...cart,
-            {
-              id: 1,
-              title: 'test',
-              quantity: 1,
-              price: 100,
-              description: 'test',
-              category: {
-                id: 5,
-                name: 'Others',
-                image: 'https://placeimg.com/640/480/any?r=0.591926261873231',
-              },
-              image: 'https://placeimg.com/640/480/any?r=0.9178516507833767',
-            },
-          ])
-        }
-      >
-        按鈕
-      </button> */}
     </>
   );
 }

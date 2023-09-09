@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { BiSearchAlt } from 'react-icons/bi';
 import styles from './styles.module.css';
@@ -16,6 +17,7 @@ const keywords = [
 ];
 
 const Header = (props: Props) => {
+  const router = useRouter();
   const { register, handleSubmit, watch, setValue } = useForm();
 
   const currentKeyword = watch('keyword') !== '' ? watch('keyword') : null;
@@ -23,7 +25,7 @@ const Header = (props: Props) => {
     (keyword) => keyword.includes(currentKeyword) && keyword !== currentKeyword,
   );
 
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (data: any) => router.push(`/?keyword=${data.keyword}`);
 
   return (
     <header className={styles.header}>

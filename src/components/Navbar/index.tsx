@@ -1,15 +1,17 @@
 import { CartContext } from '@/contexts/CartContext';
 import Link from 'next/link';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { BiSolidUser } from 'react-icons/bi';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { SiPrestashop } from 'react-icons/si';
+import CartDrop from './CartDrop';
 import styles from './styles.module.css';
 
 type Props = {};
 
 const Navbar = (props: Props) => {
-  const { cart } = useContext(CartContext);
+  const { cart, editCartItemQuantity } = useContext(CartContext);
+  const [isActive, setIsActive] = useState(false);
 
   return (
     <nav className={styles.nav}>
@@ -32,7 +34,7 @@ const Navbar = (props: Props) => {
       </article>
 
       <ul className={styles.toolBar}>
-        <li>
+        <li onClick={() => setIsActive(!isActive)}>
           <HiOutlineShoppingBag />
           {!!cart.length && (
             <span className={styles.badge}>
@@ -44,6 +46,12 @@ const Navbar = (props: Props) => {
           <BiSolidUser />
         </li>
       </ul>
+      <CartDrop
+        isActive={isActive}
+        setIsActive={setIsActive}
+        editCartItemQuantity={editCartItemQuantity}
+        cart={cart}
+      />
     </nav>
   );
 };

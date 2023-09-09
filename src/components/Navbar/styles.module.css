@@ -48,7 +48,7 @@
   display: inline-flex;
 }
 
-.toolBar li {
+.toolBar > li {
   position: relative;
   display: inline-flex;
   align-items: center;
